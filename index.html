@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>北碚环保监测系统</title>
+<style>
+    body {
+        background-image: url('junyunshan.jpg');
+        background-size: cover;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        position: relative;
+    }
+
+    form {
+        margin-top: 100px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 400px;
+        height: 50px;
+        font-size: 18px;
+        text-align: center;
+        opacity: 0.7;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+
+    .music-button {
+        position: absolute;
+        top: calc(100% + 30px);
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #007bff;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+<audio id="bgMusic" loop autoplay>
+    <source src="Diary.mp3" type="audio/mpeg">
+</audio>
+
+<form id="loginForm" onsubmit="return validateLogin()">
+    <h2>北碚环保监测系统</h2>
+    <input type="text" id="username" placeholder="账号" required><br>
+    <input type="password" id="password" placeholder="密码" required><br>
+    <button type="submit">登陆</button>
+</form>
+
+<div class="music-button" onclick="changeMusic()">切换音乐</div>
+
+<script>
+    var bgMusic = document.getElementById('bgMusic');
+    var musicIndex = 1;
+
+    function changeMusic() {
+        if (musicIndex === 1) {
+            bgMusic.src = '作酒DJ.mp3';
+            musicIndex = 2;
+        }else if (musicIndex === 2) {
+            bgMusic.src = '此生过半DJ.mp3';
+            musicIndex = 3;
+        }else if (musicIndex === 3) {
+            bgMusic.src = '关山酒DJ.mp3';
+            musicIndex = 4;
+        } else {
+            bgMusic.src = 'Diary.mp3';
+            musicIndex = 1;
+        }
+        bgMusic.play();
+    }
+
+    function validateLogin() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        // 管理员账号和密码验证逻辑
+        if (username === "hua" && password === "hua") {
+            //window.location.href = "http://hua666.eu.org:3535";
+            window.open("http://hbjc.hg666.eu.org:66/#/de-link/WRqr0D2A");
+        }else if (username === "hua1" && password === "hua") {
+            //window.location.href = "http://hua666.eu.org:3535";
+            window.open("http://sjk.hg666.eu.org:66/");
+        } else {
+            alert("登陆失败，请重试！");
+        }
+        return false;
+    }
+</script>
+
+
+<script 
+async
+defer
+src="http://hua666.eu.org:3537/api/application/embed?protocol=http&host=hua666.eu.org:3537&token=a34413cff2bb5019">
+</script>
+
+
+</body>
+</html>
